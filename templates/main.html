@@ -71,5 +71,23 @@
     {% endfor %}
 </div>
 
+<div style="display: flex; justify-content: space-between">
+    {% for comment in comments %}
+        <div style="text-align: center; height: 150px; width: 300px;">
+            {% if comment.type_message == 1 %}
+                <h3 style="color: red">{{ comment.message }}</h3>
+            {% elif comment.type_message == 2 %}
+                <h3 style="color: green">{{ comment.message }}</h3>
+            {% elif comment.type_message == 3 %}
+                <h3 style="color: blue">{{ comment.message }}</h3>
+            {% elif comment.type_message == 4 %}
+                <h3 style="color: yellow">{{ comment.message }}</h3>
+            {% endif %}
+            <h5>from: {{ comment.from_name }}</h5>
+            <h5>to: {{ comment.to_name }}</h5>
+            <h6>date: {{ comment.time }}</h6>
+        </div>
+    {% endfor %}
+
 </body>
 </html>
